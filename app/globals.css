@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+/* Тёмная тема управляется классом .dark на <html> (next-themes) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------- Дизайн-токены ---------- */
+:root {
+  /* палитра */
+  --c-berry: #8e1f3f;          /* тёмная ягода — основной бренд */
+  --c-berry-bright: #c81e4e;   /* яркий акцент (CTA) */
+  --c-berry-soft: #a63a58;
+  --c-cream: #fff8f1;          /* тёплый крем */
+  --c-ink: #2b1520;            /* текст на светлом */
+
+  /* поверхности поверх анимированного фона */
+  --surface: rgba(255, 252, 247, 0.72);
+  --surface-strong: rgba(255, 253, 250, 0.9);
+  --surface-border: rgba(142, 31, 63, 0.14);
+  --text: var(--c-ink);
+  --text-muted: rgba(43, 21, 32, 0.66);
+  --header-bg: rgba(255, 251, 245, 0.65);
+
+  color-scheme: light;
+}
+
+.dark {
+  --surface: rgba(26, 12, 18, 0.68);
+  --surface-strong: rgba(22, 10, 15, 0.88);
+  --surface-border: rgba(240, 200, 210, 0.12);
+  --c-berry-bright: #e6447a;
+  --text: #f6e9ee;
+  --text-muted: rgba(246, 233, 238, 0.62);
+  --header-bg: rgba(20, 9, 14, 0.62);
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-berry: var(--c-berry);
+  --color-berry-bright: var(--c-berry-bright);
+  --color-berry-soft: var(--c-berry-soft);
+  --color-cream: var(--c-cream);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-surface-border: var(--surface-border);
+  --color-fg: var(--text);
+  --color-fg-muted: var(--text-muted);
+  --color-header: var(--header-bg);
+
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --radius-card: 1.25rem;
+}
+
+/* ---------- База ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text);
+  font-family: var(--font-sans);
+  min-height: 100dvh;
+  background-color: var(--c-cream); /* фолбэк, пока грузится фон */
+  -webkit-font-smoothing: antialiased;
+}
+
+.dark body {
+  background-color: #14090f;
+}
+
+::selection {
+  background: var(--c-berry-bright);
+  color: #fff;
+}
+
+/* ---------- Анимированный фон (см. components/background) ---------- */
+.bg-anim {
+  position: fixed;
+  inset: -25%;                      /* запас хода во все стороны */
+  z-index: -2;
+  pointer-events: none;
+  background-repeat: repeat;
+  background-size: 800px;           /* нативный размер бесшовного тайла */
+  background-image: url("/bg/bg-anim-light.jpg");
+  background-image: url("/bg/bg-anim-light.avif"); /* нет avif → jpg строкой выше */
+  transform: translate3d(var(--bx, 0px), var(--by, 0px), 0);
+  transition:
+    transform var(--bg-dur, 6s) cubic-bezier(0.45, 0.05, 0.55, 0.95),
+    opacity 0.8s ease;
+  will-change: transform;
+}
+
+.dark .bg-anim {
+  background-image: url("/bg/bg-anim-dark.jpg");
+  background-image: url("/bg/bg-anim-dark.avif");
+}
+
+/* лёгкая виньетка, чтобы контент читался поверх фона */
+.bg-anim::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 45%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+.dark .bg-anim::after {
+  background: radial-gradient(ellipse at center, rgba(10, 4, 7, 0.25) 30%, rgba(5, 2, 4, 0.55) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-anim {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* ---------- Появление при скролле ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

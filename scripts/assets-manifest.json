@@ -1,0 +1,334 @@
+{
+  "products": [
+    {
+      "from": "sites/default/files/%d0%b0%d0%b1%d1%80%d0%b8%d0%ba%d0%be%d1%81_%d1%88%d0%be%d0%ba.jpg",
+      "to": "img/products/apricot-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%b0%d0%b1%d1%80%d0%b8%d0%ba%d0%be%d1%81_0.jpg",
+      "to": "img/nutrition/apricot-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d1%80%d1%8f%d0%b1%d0%b8%d0%bd%d0%b0_%d1%88%d0%be%d0%ba.jpg",
+      "to": "img/products/aronia-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d1%87%d0%b5%d1%80%d0%bd.%20%d1%80%d1%8f%d0%b1%d0%b8%d0%bd%d0%b0.jpg",
+      "to": "img/nutrition/aronia-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/unnamed%20(6).jpg",
+      "to": "img/products/aronia-chokeberry-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d1%80%d1%8f%d0%b1%d0%b8%d0%bd%d0%b0.png",
+      "to": "img/nutrition/aronia-chokeberry-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/unnamed%20(3).jpg",
+      "to": "img/products/black-currants-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/12345_0.png",
+      "to": "img/nutrition/black-currants-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d1%87%d0%b5%d1%80%d0%bd%d0%b0%d1%8f%20%d1%81%d0%bc%d0%be%d1%80%d0%be%d0%b4%d0%b8%d0%bd%d0%b0_%d1%88%d0%be%d0%ba.jpg",
+      "to": "img/products/black-currants-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d1%87%d0%b5%d1%80%d0%bd.%20%d1%81%d0%bc%d0%be%d1%80%d0%be%d0%b4%d0%b8%d0%bd%d0%b0.jpg",
+      "to": "img/nutrition/black-currants-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%b5%d0%b6%d0%b5%d0%b2%d0%b8%d0%ba%d0%b0_%d1%88%d0%be%d0%ba.jpg",
+      "to": "img/products/blackberry-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%b3%d0%be%d0%bb%d1%83%d0%b1%d0%b8%d0%ba%d0%b0.jpg",
+      "to": "img/nutrition/blackberry-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d1%87%d0%b5%d1%80%d0%bd%d0%b8%d0%ba%d0%b0_%d1%88%d0%be%d0%ba.jpg",
+      "to": "img/products/blueberry-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/BLUEBERRY%20NUTRITION%20FACTS_0.png",
+      "to": "img/nutrition/blueberry-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%bd%d1%83%d1%82_%d1%88%d0%be%d0%ba.jpg",
+      "to": "img/products/chickpeas-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%bd%d1%83%d1%82.jpg",
+      "to": "img/nutrition/chickpeas-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%ba%d0%bb%d1%8e%d0%ba%d0%b2%d0%b0_%d1%88%d0%be%d0%ba.jpg",
+      "to": "img/products/cranberry-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%ba%d0%bb%d1%8e%d0%ba%d0%b2%d0%b0.jpg",
+      "to": "img/nutrition/cranberry-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/unnamed%20(7).jpg",
+      "to": "img/products/lingonberries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/lingon.png",
+      "to": "img/nutrition/lingonberries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/Untitled_9.jpg",
+      "to": "img/products/organic-aronia-berries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d1%80%d1%8f%d0%b1%d0%b8%d0%bd%d0%b0_0.png",
+      "to": "img/nutrition/organic-aronia-berries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/Untitled-3.jpg",
+      "to": "img/products/organic-aronia-berry-juice-200ml.jpg"
+    },
+    {
+      "from": "sites/default/files/aronia_0.png",
+      "to": "img/nutrition/organic-aronia-berry-juice-200ml.jpg"
+    },
+    {
+      "from": "sites/default/files/Untitled-5.jpg",
+      "to": "img/products/organic-aronia-berry-juice-720ml.jpg"
+    },
+    {
+      "from": "sites/default/files/aronia_1.jpg",
+      "to": "img/nutrition/organic-aronia-berry-juice-720ml.jpg"
+    },
+    {
+      "from": "sites/default/files/Untitled_3.jpg",
+      "to": "img/products/organic-black-currants-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/12345.png",
+      "to": "img/nutrition/organic-black-currants-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/unnamed%20(10).jpg",
+      "to": "img/products/organic-blackberries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/Untitled-4.jpg",
+      "to": "img/products/organic-blackberry-blueberry-mix-200ml.jpg"
+    },
+    {
+      "from": "sites/default/files/mix_0.png",
+      "to": "img/nutrition/organic-blackberry-blueberry-mix-200ml.jpg"
+    },
+    {
+      "from": "sites/default/files/Untitled-2.jpg",
+      "to": "img/products/organic-blackberry-juice-200ml.jpg"
+    },
+    {
+      "from": "sites/default/files/blackberry_0_0.png",
+      "to": "img/nutrition/organic-blackberry-juice-200ml.jpg"
+    },
+    {
+      "from": "sites/default/files/Untitled-1.jpg",
+      "to": "img/products/organic-blueberry-juice-200ml.jpg"
+    },
+    {
+      "from": "sites/default/files/bluberry_0.png",
+      "to": "img/nutrition/organic-blueberry-juice-200ml.jpg"
+    },
+    {
+      "from": "sites/default/files/Untitled_1.jpg",
+      "to": "img/products/organic-peaches-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%bf%d0%b5%d1%80%d1%81%d0%b8%d0%ba_0_0.png",
+      "to": "img/nutrition/organic-peaches-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/Untitled_5.jpg",
+      "to": "img/products/organic-pears-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%b3%d1%80%d1%83%d1%88%d0%b0_0.png",
+      "to": "img/nutrition/organic-pears-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/Untitled_2_0.jpg",
+      "to": "img/products/organic-plums-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d1%81%d0%bb%d0%b8%d0%b2%d0%b0_0.png",
+      "to": "img/nutrition/organic-plums-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/Untitled_6.jpg",
+      "to": "img/products/organic-raspberries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%bc%d0%b0%d0%bb%d0%b8%d0%bd%d0%b0_0_0.png",
+      "to": "img/nutrition/organic-raspberries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/unnamed.jpg",
+      "to": "img/products/organic-seaberries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%a1%d0%bd%d0%b8%d0%bc%d0%be%d0%ba%20%d1%8d%d0%ba%d1%80%d0%b0%d0%bd%d0%b0%20%d0%be%d1%82%202017-01-10%2015-54-10_0.png",
+      "to": "img/nutrition/organic-seaberries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/Untitled_4.jpg",
+      "to": "img/products/organic-strawberries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/123.png",
+      "to": "img/nutrition/organic-strawberries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/unnamed_1.jpg",
+      "to": "img/products/organic-tart-cherries.jpg"
+    },
+    {
+      "from": "sites/default/files/visjk.jpg",
+      "to": "img/nutrition/organic-tart-cherries.jpg"
+    },
+    {
+      "from": "sites/default/files/unnamed_0.jpg",
+      "to": "img/products/organic-wild-blueberries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/1234.png",
+      "to": "img/nutrition/organic-wild-blueberries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/unnamed%20(9).jpg",
+      "to": "img/products/organic-wild-strawberries-35-oz-100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%bc%d0%b0%d0%bb%d0%b8%d0%bd%d0%b0.png",
+      "to": "img/nutrition/organic-wild-strawberries-35-oz-100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%bf%d0%b5%d1%80%d1%81%d0%b8%d0%ba_%d1%88%d0%be%d0%ba.jpg",
+      "to": "img/products/peach-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/PEACH%20NUTRITION%20FACTS.png",
+      "to": "img/nutrition/peach-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/unnamed%20(4).jpg",
+      "to": "img/products/peaches-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%bf%d0%b5%d1%80%d1%81%d0%b8%d0%ba_0.png",
+      "to": "img/nutrition/peaches-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%b3%d1%80%d1%83%d1%88%d0%b0_%d1%88%d0%be%d0%ba.jpg",
+      "to": "img/products/pear-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%b3%d1%80%d1%83%d1%88%d0%b0.jpg",
+      "to": "img/nutrition/pear-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/unnamed%20(1).jpg",
+      "to": "img/products/pears-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%b3%d1%80%d1%83%d1%88%d0%b0.png",
+      "to": "img/nutrition/pears-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d1%81%d0%bb%d0%b8%d0%b2%d0%b0_%d1%88%d0%be%d0%ba.jpg",
+      "to": "img/products/plum-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d1%81%d0%bb%d0%b8%d0%b2%d0%b0_0.jpg",
+      "to": "img/nutrition/plum-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/unnamed%20(2).jpg",
+      "to": "img/products/plums-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d1%81%d0%bb%d0%b8%d0%b2%d0%b0.png",
+      "to": "img/nutrition/plums-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/unnamed%20(5).jpg",
+      "to": "img/products/raspberries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%bc%d0%b0%d0%bb%d0%b8%d0%bd%d0%b0_0.png",
+      "to": "img/nutrition/raspberries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%bc%d0%b0%d0%bb%d0%b8%d0%bd%d0%b0%d0%b0_%d1%88%d0%be%d0%ba.jpg",
+      "to": "img/products/raspberry-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%bc%d0%b0%d0%bb%d0%b8%d0%bd%d0%b0.jpg",
+      "to": "img/nutrition/raspberry-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/unnamed%20(2)_0.jpg",
+      "to": "img/products/seaberries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%a1%d0%bd%d0%b8%d0%bc%d0%be%d0%ba%20%d1%8d%d0%ba%d1%80%d0%b0%d0%bd%d0%b0%20%d0%be%d1%82%202017-01-10%2015-54-10.png",
+      "to": "img/nutrition/seaberries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/unnamed%20(3)_0.jpg",
+      "to": "img/products/strawberries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/123_0.png",
+      "to": "img/nutrition/strawberries-35-oz100g.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%ba%d0%bb%d1%83%d0%b1%d0%bd%d0%b8%d0%ba%d0%b0_%d1%88%d0%be%d0%ba.jpg",
+      "to": "img/products/strawberry-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%ba%d0%bb%d1%83%d0%b1%d0%bd%d0%b8%d0%ba%d0%b0.jpg",
+      "to": "img/nutrition/strawberry-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d1%81%d0%b5%d0%bc%d0%b5%d1%87%d0%ba%d0%b8_%d1%88%d0%be%d0%ba.jpg",
+      "to": "img/products/sunflower-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d1%81%d0%b5%d0%bc%d0%b5%d1%87%d0%ba%d0%b8_0.jpg",
+      "to": "img/nutrition/sunflower-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/unnamed%20(1)_0.jpg",
+      "to": "img/products/tart-cherries.jpg"
+    },
+    {
+      "from": "sites/default/files/visjk_0.jpg",
+      "to": "img/nutrition/tart-cherries.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%b2%d0%b8%d1%88%d0%bd%d1%8f_%d1%88%d0%be%d0%ba.jpg",
+      "to": "img/products/tart-cherry-chocolate.jpg"
+    },
+    {
+      "from": "sites/default/files/%d0%b2%d0%b8%d1%88%d0%bd%d1%8f.jpg",
+      "to": "img/nutrition/tart-cherry-chocolate.jpg"
+    }
+  ],
+  "categories": {
+    "berry-juices": "/img/products/organic-aronia-berry-juice-720ml.jpg",
+    "dried-berries": "/img/products/organic-wild-blueberries-35-oz100g.jpg",
+    "dried-fruits": "/img/products/organic-pears-35-oz100g.jpg",
+    "dark-chocolate-covered-fruits": "/img/products/strawberry-chocolate.jpg"
+  }
+}
