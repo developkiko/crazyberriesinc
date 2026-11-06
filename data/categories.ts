@@ -31,7 +31,7 @@ export const categories: Category[] = [
     short: "Berries & fruits embraced by dark chocolate",
     description:
       "Our rarest berries and fruits covered in smooth dark chocolate — from aronia and lingonberry to chickpeas and sunflower seeds. The gift that never sits uneaten.",
-    image: "/img/categories/dark-chocolate.jpg",
+    image: "/img/categories/dark-chocolate-covered-fruits.jpg",
   },
 ];
 

@@ -105,15 +105,26 @@ async function main() {
 
   for (const file of files) {
     const slug = file.replace(/\.jpg$/, "");
-    const buf = await sharp(join(SRC_DIR, file))
-      .grayscale()
-      .normalize()
-      .resize({ width: 1600, withoutEnlargement: true })
+
+    // два прохода: «как есть» (без апскейла) и апскейл с резкостью —
+    // разные этикетки читаются по-разному, берём лучший результат
+    const base = sharp(join(SRC_DIR, file)).grayscale().normalize();
+    const bufA = await base.clone().resize({ width: 1600, withoutEnlargement: true }).png().toBuffer();
+    const bufB = await base
+      .clone()
+      .resize({ width: 1600, kernel: "lanczos3" })
+      .sharpen()
       .png()
       .toBuffer();
 
-    const { data } = await worker.recognize(buf);
-    const facts = parseLabel(data.text);
+    const [{ data: a }, { data: b }] = await Promise.all([
+      worker.recognize(bufA),
+      worker.recognize(bufB),
+    ]);
+    const factsA = parseLabel(a.text);
+    const factsB = parseLabel(b.text);
+    const score = (f) => (f.calories !== undefined ? 100 : 0) + f.rows.length * 10 + f.micronutrients.length * 5;
+    const facts = score(factsB) > score(factsA) ? factsB : factsA;
 
     // правдоподобность: есть порция, минимум 5 строк и хоть какая-то цифра калорий или жира
     const plausible =

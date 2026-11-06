@@ -3,7 +3,7 @@
    - навигация: NetworkFirst (свежие страницы) с офлайн-фолбэком
    - статика Next (/​_next/static), картинки, шрифты: CacheFirst
    - остальное: сеть */
-const VERSION = "cb-v1";
+const VERSION = "cb-v2";
 const STATIC_CACHE = `${VERSION}-static`;
 const PAGES_CACHE = `${VERSION}-pages`;
 
@@ -13,7 +13,7 @@ const PRECACHE = [
   "/manifest.webmanifest",
   "/bg/bg-anim-light.jpg",
   "/bg/bg-anim-dark.jpg",
-  "/logo-flat.svg",
+  "/logo.svg",
   "/icons/icon-192.png",
 ];
 

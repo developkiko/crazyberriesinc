@@ -1312,6 +1312,84 @@ export const nutrition: Record<string, NutritionFacts> = {
       }
     ]
   },
+  "organic-peaches-35-oz100g": {
+    "servingSize": "1/3 cup (40g)",
+    "servingsPerContainer": "2-3",
+    "calories": 124,
+    "caloriesFromFat": 0,
+    "rows": [
+      {
+        "label": "Total Fat",
+        "amount": "0g",
+        "dv": "0%",
+        "indent": false
+      },
+      {
+        "label": "Saturated Fat",
+        "amount": "0g",
+        "dv": "0%",
+        "indent": true
+      },
+      {
+        "label": "Trans Fat",
+        "amount": "0g",
+        "indent": true
+      },
+      {
+        "label": "Cholesterol",
+        "amount": "0mg",
+        "dv": "0%",
+        "indent": false
+      },
+      {
+        "label": "Sodium",
+        "amount": "1mg",
+        "dv": "2%",
+        "indent": false
+      },
+      {
+        "label": "Total Carbohydrate",
+        "amount": "29g",
+        "dv": "7%",
+        "indent": false
+      },
+      {
+        "label": "Fiber",
+        "amount": "2g",
+        "dv": "8%",
+        "indent": true
+      },
+      {
+        "label": "Sugars",
+        "amount": "18g",
+        "indent": true
+      },
+      {
+        "label": "Protein",
+        "amount": "0g",
+        "dv": "0%",
+        "indent": false
+      }
+    ],
+    "micronutrients": [
+      {
+        "label": "Vitamin A",
+        "amount": "4%"
+      },
+      {
+        "label": "Vitamin C",
+        "amount": "6%"
+      },
+      {
+        "label": "Calcium",
+        "amount": "3%"
+      },
+      {
+        "label": "Iron",
+        "amount": "2%"
+      }
+    ]
+  },
   "organic-pears-35-oz100g": {
     "servingSize": "1/3 cup (40g)",
     "servingsPerContainer": "2-3",
@@ -1546,8 +1624,10 @@ export const nutrition: Record<string, NutritionFacts> = {
     ]
   },
   "organic-seaberries-35-oz100g": {
-    "servingSize": "1/3 cup (40g)",
+    "servingSize": "1/3 cup (409g)",
     "servingsPerContainer": "2-3",
+    "calories": 129,
+    "caloriesFromFat": 0,
     "rows": [
       {
         "label": "Total Fat",
@@ -2535,8 +2615,10 @@ export const nutrition: Record<string, NutritionFacts> = {
     ]
   },
   "seaberries-35-oz100g": {
-    "servingSize": "1/3 cup (40g)",
+    "servingSize": "1/3 cup (409g)",
     "servingsPerContainer": "2-3",
+    "calories": 129,
+    "caloriesFromFat": 0,
     "rows": [
       {
         "label": "Total Fat",

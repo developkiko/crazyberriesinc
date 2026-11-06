@@ -39,15 +39,15 @@ async function main() {
   report.bgDark = await variants(join(IMGS, "bg-anim-dark.jpg"), join(PUBLIC, "bg", "bg-anim-dark"), { max: 2400, quality: 70 });
 
   // ---------- 2. Логотип + иконки ----------
-  const logoSrc = join(IMGS, "logo.png");
+  // цветной градиентный SVG-знак — единый источник для шапки и всех иконок
+  const logoSvg = join(IMGS, "logo_sign-chatgpt-colored-gradient-min.svg");
   ensure(join(PUBLIC, "icons"));
-  await sharp(logoSrc).resize(480, 240, { fit: "inside", withoutEnlargement: true }).png().toFile(join(PUBLIC, "logo.png"));
-  copyFileSync(join(IMGS, "logo-sign.svg"), join(PUBLIC, "logo-sign.svg"));
-  copyFileSync(join(IMGS, "CrazyBerries_colored_flat.svg"), join(PUBLIC, "logo-flat.svg"));
+  copyFileSync(logoSvg, join(PUBLIC, "logo.svg"));
+  await sharp(logoSvg, { density: 300 }).resize(900, 900, { fit: "inside" }).png().toFile(join(PUBLIC, "logo.png"));
 
   const icon = async (size, file, { pad = 0, bg = null } = {}) => {
-    const inner = await sharp(logoSrc)
-      .resize(size - pad * 2, size - pad * 2, { fit: "inside", withoutEnlargement: false })
+    const inner = await sharp(logoSvg, { density: 300 })
+      .resize(size - pad * 2, size - pad * 2, { fit: "inside" })
       .png()
       .toBuffer();
     if (bg) {

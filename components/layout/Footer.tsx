@@ -7,40 +7,17 @@ export default function Footer() {
   return (
     <footer className="mt-20 border-t border-surface-border bg-surface backdrop-blur-md">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
-        <div>
+        {/* бренд + контакты */}
+        <div className="text-sm">
           <p className="font-display text-2xl font-semibold">
             Crazy<span className="text-berry-bright">Berries</span>
           </p>
-          <p className="mt-3 max-w-xs text-sm leading-relaxed text-fg-muted">
+          <p className="mt-3 max-w-xs leading-relaxed text-fg-muted">
             Rare European berries, fruits, juices and chocolate-covered treats.
             Unsulfured. Non-GMO. Wildly good.
           </p>
-        </div>
 
-        <nav aria-label="Products" className="text-sm">
-          <p className="mb-3 font-semibold uppercase tracking-wider text-fg-muted">Products</p>
-          <ul className="flex flex-col gap-2">
-            {categories.map((c) => (
-              <li key={c.slug}>
-                <Link
-                  href={`/catalog/${c.slug}`}
-                  className="transition-colors hover:text-berry-bright"
-                >
-                  {c.title}
-                </Link>
-              </li>
-            ))}
-            <li>
-              <Link href="/catalog" className="transition-colors hover:text-berry-bright">
-                All products
-              </Link>
-            </li>
-          </ul>
-        </nav>
-
-        <div className="text-sm">
-          <p className="mb-3 font-semibold uppercase tracking-wider text-fg-muted">Contact</p>
-          <ul className="flex flex-col gap-2.5">
+          <ul className="mt-5 flex flex-col gap-2.5">
             <li>
               <a
                 href={`tel:${site.phoneHref}`}
@@ -71,9 +48,31 @@ export default function Footer() {
           <p className="mt-4 text-xs text-fg-muted">
             Wholesale & corporate accounts welcome.
           </p>
-          <p className="mt-5 mb-3 font-semibold uppercase tracking-wider text-fg-muted">
-            Policies
-          </p>
+        </div>
+
+        <nav aria-label="Products" className="text-sm">
+          <p className="mb-3 font-semibold uppercase tracking-wider text-fg-muted">Products</p>
+          <ul className="flex flex-col gap-2">
+            {categories.map((c) => (
+              <li key={c.slug}>
+                <Link
+                  href={`/catalog/${c.slug}`}
+                  className="transition-colors hover:text-berry-bright"
+                >
+                  {c.title}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link href="/catalog" className="transition-colors hover:text-berry-bright">
+                All products
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Policies" className="text-sm">
+          <p className="mb-3 font-semibold uppercase tracking-wider text-fg-muted">Policies</p>
           <ul className="flex flex-col gap-2">
             <li>
               <Link href="/privacy" className="transition-colors hover:text-berry-bright">
@@ -91,7 +90,7 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
-        </div>
+        </nav>
       </div>
 
       <div className="border-t border-surface-border">
