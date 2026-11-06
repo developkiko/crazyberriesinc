@@ -160,3 +160,20 @@ body {
     transition: none;
   }
 }
+
+/* ---------- Покачивание эмблемы лого при ховере ---------- */
+@keyframes logo-rock {
+  0%,
+  100% {
+    transform: rotate(-7deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-emblem {
+    animation: none !important;
+  }
+}

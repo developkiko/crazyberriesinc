@@ -16,7 +16,7 @@ export default function Logo({ className }: { className?: string }) {
       <img
         src="/logo.svg"
         alt=""
-        className="mt-[3px] h-[76px] w-[76px] shrink-0 self-start transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-105"
+        className="logo-emblem mt-[3px] h-[100px] w-[100px] shrink-0 self-start group-hover:animate-[logo-rock_1.4s_ease-in-out_infinite]"
       />
       <span className="font-display text-xl font-semibold leading-none tracking-tight sm:text-[26px]">
         Crazy<span className="text-berry-bright">Berries</span>

@@ -12,11 +12,13 @@ export default function ContactForm() {
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    // currentType захватываем до await: после асинхронного ожидания React обнуляет его
+    const form = e.currentTarget;
     setStatus("sending");
     setError("");
 
-    const form = new FormData(e.currentTarget);
-    if ((form.get("company") as string)?.trim()) {
+    const fd = new FormData(form);
+    if ((fd.get("company") as string)?.trim()) {
       setStatus("done");
       return;
     }
@@ -26,10 +28,10 @@ export default function ContactForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: form.get("name"),
-          contact: form.get("contact"),
-          subject: form.get("subject"),
-          message: form.get("message"),
+          name: fd.get("name"),
+          contact: fd.get("contact"),
+          subject: fd.get("subject"),
+          message: fd.get("message"),
         }),
       });
       if (!res.ok) {
@@ -37,7 +39,7 @@ export default function ContactForm() {
         throw new Error(data.error || "");
       }
       setStatus("done");
-      e.currentTarget.reset();
+      form.reset();
     } catch (err) {
       setStatus("error");
       setError(
