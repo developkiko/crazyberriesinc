@@ -89,6 +89,11 @@ export default function Footer() {
                 Shipping & Returns
               </Link>
             </li>
+            <li>
+              <Link href="/cookies" className="transition-colors hover:text-berry-bright">
+                Cookie Policy
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>

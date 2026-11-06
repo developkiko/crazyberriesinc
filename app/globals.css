@@ -3,6 +3,57 @@
 /* Тёмная тема управляется классом .dark на <html> (next-themes) */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ---------- Плавная смена темы ----------
+   Регистрируем цветовые переменные как <color>: тогда сам параметр можно
+   анимировать — и ВСЕ цвета сайта (поверхности, текст, рамки) морфируются
+   плавно при переключении .dark, без перебора всех элементов. */
+@property --surface {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255, 252, 247, 0.72);
+}
+@property --surface-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255, 253, 250, 0.9);
+}
+@property --surface-border {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(142, 31, 63, 0.14);
+}
+@property --header-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255, 251, 245, 0.65);
+}
+@property --text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #2b1520;
+}
+@property --text-muted {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(43, 21, 32, 0.66);
+}
+@property --c-berry-bright {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #c81e4e;
+}
+
+html {
+  transition:
+    --surface 0.7s ease,
+    --surface-strong 0.7s ease,
+    --surface-border 0.7s ease,
+    --header-bg 0.7s ease,
+    --text 0.7s ease,
+    --text-muted 0.7s ease,
+    --c-berry-bright 0.7s ease;
+}
+
 /* ---------- Дизайн-токены ---------- */
 :root {
   /* палитра */
@@ -63,6 +114,7 @@ body {
   font-family: var(--font-sans);
   min-height: 100dvh;
   background-color: var(--c-cream); /* фолбэк, пока грузится фон */
+  transition: background-color 0.7s ease;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -93,27 +145,35 @@ body {
   inset: 0;
   background-repeat: repeat;
   background-size: 800px;           /* нативный размер бесшовного тайла */
-  transition: opacity 1s ease;
+  /* кроссфейд + «дыхание»: входящий слой усаживается из лёгкого зума,
+     уходящий — тихо отдаляется; движение контейнера не затрагивается */
+  transition:
+    opacity 1.6s cubic-bezier(0.37, 0, 0.63, 1),
+    transform 1.6s cubic-bezier(0.37, 0, 0.63, 1);
 }
 
 .bg-layer-light {
   opacity: 1;
+  transform: scale(1);
   background-image: url("/bg/bg-anim-light.jpg");
   background-image: url("/bg/bg-anim-light.avif"); /* нет avif → jpg строкой выше */
 }
 
 .bg-layer-dark {
   opacity: 0;
+  transform: scale(1.05);
   background-image: url("/bg/bg-anim-dark.jpg");
   background-image: url("/bg/bg-anim-dark.avif");
 }
 
 .dark .bg-layer-light {
   opacity: 0;
+  transform: scale(1.05);
 }
 
 .dark .bg-layer-dark {
   opacity: 1;
+  transform: scale(1);
 }
 
 /* лёгкая виньетка, чтобы контент читался поверх фона */
@@ -122,7 +182,7 @@ body {
   position: absolute;
   inset: 0;
   background: radial-gradient(ellipse at center, transparent 45%, rgba(0, 0, 0, 0.1) 100%);
-  transition: background 1s ease;
+  transition: background 1.6s cubic-bezier(0.37, 0, 0.63, 1);
 }
 
 .dark .bg-anim::after {
@@ -172,8 +232,28 @@ body {
   }
 }
 
+/* ---------- Появление куки-уведомления ---------- */
+@keyframes cookie-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-cookie-in {
+  animation: cookie-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .logo-emblem {
     animation: none !important;
+  }
+
+  .animate-cookie-in {
+    animation: none;
   }
 }

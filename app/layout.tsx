@@ -7,6 +7,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import AnimatedBackground from "@/components/background/AnimatedBackground";
 import CartDrawer from "@/components/cart/CartDrawer";
+import CookieConsent from "@/components/layout/CookieConsent";
 import ServiceWorkerRegister from "@/components/pwa/ServiceWorkerRegister";
 import JsonLd from "@/components/seo/JsonLd";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
@@ -54,12 +55,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${fraunces.variable} ${inter.variable} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <AnimatedBackground />
           <Header />
           <main className="relative min-h-[60dvh]">{children}</main>
           <Footer />
           <CartDrawer />
+          <CookieConsent />
           <ServiceWorkerRegister />
         </ThemeProvider>
         <JsonLd data={[organizationJsonLd(), websiteJsonLd()]} />
