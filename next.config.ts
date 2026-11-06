@@ -33,19 +33,33 @@ const nextConfig: NextConfig = {
   redirects: async () => [
     { source: "/index.html", destination: "/", permanent: true },
     { source: "/catalog.html", destination: "/catalog", permanent: true },
+    // старые Drupal-URL были и с .html, и «чистые» — гугл индексировал оба варианта
     { source: "/content/crazy-berries.html", destination: "/", permanent: true },
     { source: "/content/about-us.html", destination: "/about", permanent: true },
     { source: "/content/contact-us.html", destination: "/contact", permanent: true },
+    { source: "/content/crazy-berries", destination: "/", permanent: true },
+    { source: "/content/about-us", destination: "/about", permanent: true },
+    { source: "/content/contact-us", destination: "/contact", permanent: true },
     {
       source: "/content/:slug(.*).html",
       destination: "/product/:slug",
       permanent: true,
     },
+    { source: "/content/:slug", destination: "/product/:slug", permanent: true },
     ...Object.entries(catalogSubToParent).map(([slug, parent]) => ({
       source: `/catalog/${slug}.html`,
       destination: `/catalog/${parent}`,
       permanent: true,
     })),
+    ...Object.entries(catalogSubToParent)
+      // «чистые» URL: исключаем самомапинги — /catalog/dried-berries и есть
+      // реальная страница категории, редирект на себя зациклится
+      .filter(([slug, parent]) => slug !== parent)
+      .map(([slug, parent]) => ({
+        source: `/catalog/${slug}`,
+        destination: `/catalog/${parent}`,
+        permanent: true,
+      })),
     { source: "/node/:path*", destination: "/", permanent: false },
     { source: "/taxonomy/:path*", destination: "/", permanent: false },
   ],
