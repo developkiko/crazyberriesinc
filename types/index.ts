@@ -42,3 +42,24 @@ export interface CartItem {
   imageAlt: string;
   qty: number;
 }
+
+/** строка таблицы Nutrition Facts */
+export interface NutritionRow {
+  label: string;
+  amount: string;
+  /** % Daily Value, если указан на этикетке */
+  dv?: string;
+  /** сдвиг вправо (Saturated Fat, Fiber, Sugars…) как на FDA-этикетке */
+  indent?: boolean;
+}
+
+/** распознанные данные этикетки (см. scripts/nutrition-ocr.mjs) */
+export interface NutritionFacts {
+  servingSize: string;
+  servingsPerContainer?: string;
+  calories?: number;
+  caloriesFromFat?: number;
+  rows: NutritionRow[];
+  /** витамины/минералы — только % Daily Value */
+  micronutrients: NutritionRow[];
+}

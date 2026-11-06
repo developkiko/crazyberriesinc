@@ -57,13 +57,40 @@ export default function Footer() {
                 <Mail className="h-4 w-4" /> {site.email}
               </a>
             </li>
-            <li className="inline-flex items-start gap-2 text-fg-muted">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0" /> {site.address}
+            <li>
+              <a
+                href={site.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-start gap-2 text-fg-muted transition-colors hover:text-berry-bright"
+              >
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0" /> {site.address}
+              </a>
             </li>
           </ul>
           <p className="mt-4 text-xs text-fg-muted">
             Wholesale & corporate accounts welcome.
           </p>
+          <p className="mt-5 mb-3 font-semibold uppercase tracking-wider text-fg-muted">
+            Policies
+          </p>
+          <ul className="flex flex-col gap-2">
+            <li>
+              <Link href="/privacy" className="transition-colors hover:text-berry-bright">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link href="/terms" className="transition-colors hover:text-berry-bright">
+                Terms of Service
+              </Link>
+            </li>
+            <li>
+              <Link href="/shipping" className="transition-colors hover:text-berry-bright">
+                Shipping & Returns
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
 

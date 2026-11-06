@@ -75,26 +75,45 @@ body {
   color: #fff;
 }
 
-/* ---------- Анимированный фон (см. components/background) ---------- */
+/* ---------- Анимированный фон (см. components/background) ----------
+   Один движущийся контейнер несёт ОБЕ картинки-темы; переключение темы —
+   только кроссфейд прозрачности слоёв, поэтому фон не дёргается. */
 .bg-anim {
   position: fixed;
   inset: -25%;                      /* запас хода во все стороны */
   z-index: -2;
   pointer-events: none;
-  background-repeat: repeat;
-  background-size: 800px;           /* нативный размер бесшовного тайла */
-  background-image: url("/bg/bg-anim-light.jpg");
-  background-image: url("/bg/bg-anim-light.avif"); /* нет avif → jpg строкой выше */
   transform: translate3d(var(--bx, 0px), var(--by, 0px), 0);
-  transition:
-    transform var(--bg-dur, 6s) cubic-bezier(0.45, 0.05, 0.55, 0.95),
-    opacity 0.8s ease;
+  transition: transform var(--bg-dur, 6s) cubic-bezier(0.45, 0.05, 0.55, 0.95);
   will-change: transform;
 }
 
-.dark .bg-anim {
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  background-size: 800px;           /* нативный размер бесшовного тайла */
+  transition: opacity 1s ease;
+}
+
+.bg-layer-light {
+  opacity: 1;
+  background-image: url("/bg/bg-anim-light.jpg");
+  background-image: url("/bg/bg-anim-light.avif"); /* нет avif → jpg строкой выше */
+}
+
+.bg-layer-dark {
+  opacity: 0;
   background-image: url("/bg/bg-anim-dark.jpg");
   background-image: url("/bg/bg-anim-dark.avif");
+}
+
+.dark .bg-layer-light {
+  opacity: 0;
+}
+
+.dark .bg-layer-dark {
+  opacity: 1;
 }
 
 /* лёгкая виньетка, чтобы контент читался поверх фона */
@@ -103,6 +122,7 @@ body {
   position: absolute;
   inset: 0;
   background: radial-gradient(ellipse at center, transparent 45%, rgba(0, 0, 0, 0.1) 100%);
+  transition: background 1s ease;
 }
 
 .dark .bg-anim::after {
@@ -113,6 +133,10 @@ body {
   .bg-anim {
     transition: none;
     transform: none;
+  }
+
+  .bg-layer {
+    transition: none;
   }
 }
 

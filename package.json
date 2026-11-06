@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "assets": "node scripts/assets.mjs",
-    "extract": "node scripts/extract-products.mjs"
+    "extract": "node scripts/extract-products.mjs",
+    "nutrition-ocr": "node scripts/nutrition-ocr.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -29,6 +30,7 @@
     "@types/react-dom": "^19",
     "sharp": "^0.35.5",
     "tailwindcss": "^4.3.4",
+    "tesseract.js": "^7.0.0",
     "typescript": "^5.9.0"
   }
 }

@@ -25,7 +25,22 @@ export async function POST(req: Request) {
       `<b>💬 Message:</b>\n${escapeTg(message)}`,
     ];
 
-    await notify("New message ✉️", lines);
+    const result = await notify("New message ✉️", lines);
+
+    // честный ответ: если уведомление не ушло — сообщаем об ошибке
+    if (!result.ok) {
+      console.error("[contact] уведомление не отправлено:", result.error);
+      return NextResponse.json(
+        {
+          error:
+            result.error === "telegram-not-configured"
+              ? "The message was not delivered: notifications are not configured on the server. Please call or e-mail us directly."
+              : "Could not deliver your message. Please try again in a moment.",
+        },
+        { status: 502 }
+      );
+    }
+
     return NextResponse.json({ ok: true });
   } catch (e) {
     console.error("[contact]", e);

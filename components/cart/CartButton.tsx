@@ -1,14 +1,18 @@
 "use client";
 
-import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useCart, cartCount } from "@/lib/cart-store";
 import { ShoppingBag } from "lucide-react";
 
-/** Кнопка корзины в хедере: иконка + бейдж количества позиций */
+/** Кнопка корзины в хедере: иконка + бейдж количества позиций.
+ *  На странице /cart самой корзины прячем — там полный список товаров. */
 export default function CartButton() {
+  const pathname = usePathname();
   const items = useCart((s) => s.items);
   const setDrawerOpen = useCart((s) => s.setDrawerOpen);
   const count = cartCount(items);
+
+  if (pathname === "/cart") return null;
 
   return (
     <button

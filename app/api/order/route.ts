@@ -41,8 +41,19 @@ export async function POST(req: Request) {
 
     const result = await notify("New order request 🌟", lines);
 
-    if (!result.ok && result.error === "telegram-not-configured") {
-      console.error("[order] уведомления не настроены (TELEGRAM_CHAT_IDS пуст?)");
+    // честный ответ: если уведомление не ушло — говорим об ошибке,
+    // а не делаем вид, что заявка принята
+    if (!result.ok) {
+      console.error("[order] уведомление не отправлено:", result.error);
+      return NextResponse.json(
+        {
+          error:
+            result.error === "telegram-not-configured"
+              ? "The request was not delivered: notifications are not configured on the server. Please call us — we will take your order by phone."
+              : "Could not deliver your request. Please try again in a moment or call us.",
+        },
+        { status: 502 }
+      );
     }
 
     return NextResponse.json({ ok: true });

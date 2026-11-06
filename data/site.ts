@@ -9,6 +9,7 @@ export const site = {
   phoneHref: "+19178181864",
   email: "CrazyBerriesInc@gmail.com",
   address: "Staten Island, NY 10304, P.O. Box 40803",
+  mapsUrl: "https://maps.app.goo.gl/C3CNsNnniJqgewdy9",
   founded: "2016",
   nav: [
     { href: "/", label: "Home" },

@@ -44,7 +44,10 @@ export default function CheckoutForm() {
           items: items.map((i) => ({ slug: i.slug, name: i.name, weight: i.weight, qty: i.qty })),
         }),
       });
-      if (!res.ok) throw new Error(await res.text());
+      if (!res.ok) {
+        const data = (await res.json().catch(() => ({}))) as { error?: string };
+        throw new Error(data.error || "Something went wrong. Please try again or call us.");
+      }
       setStatus("done");
       clear();
     } catch (err) {

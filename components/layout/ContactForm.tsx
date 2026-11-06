@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Send, Loader2, CheckCircle2 } from "lucide-react";
 import { Button, Surface } from "@/components/ui/Button";
+import { site } from "@/data/site";
 
 /** Форма обратной связи → Telegram-бот админам + копия на почту владельца */
 export default function ContactForm() {
@@ -31,12 +32,19 @@ export default function ContactForm() {
           message: form.get("message"),
         }),
       });
-      if (!res.ok) throw new Error();
+      if (!res.ok) {
+        const data = (await res.json().catch(() => ({}))) as { error?: string };
+        throw new Error(data.error || "");
+      }
       setStatus("done");
       e.currentTarget.reset();
-    } catch {
+    } catch (err) {
       setStatus("error");
-      setError("Something went wrong. Please try again or call (917) 818-1864.");
+      setError(
+        err instanceof Error && err.message
+          ? err.message
+          : `Something went wrong. Please try again or call ${site.phone}.`
+      );
     }
   }
 

@@ -57,7 +57,15 @@ export default function ContactPage() {
               <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-berry-bright" />
               <div>
                 <p className="font-semibold">Address</p>
-                <p className="text-sm text-fg-muted">{site.address}</p>
+                <a
+                  href={site.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-fg-muted underline decoration-surface-border underline-offset-4 transition-colors hover:text-berry-bright"
+                >
+                  {site.address}
+                </a>
+                <p className="mt-1 text-xs text-fg-muted">Open in Google Maps ↗</p>
               </div>
             </Surface>
             <Surface className="flex items-start gap-4 p-5">

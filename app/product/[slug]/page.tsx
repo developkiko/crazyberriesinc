@@ -8,10 +8,12 @@ import Reveal from "@/components/ui/Reveal";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import AddToCartButton from "@/components/cart/AddToCartButton";
 import ProductGrid from "@/components/catalog/ProductGrid";
+import NutritionTable from "@/components/product/NutritionTable";
 import JsonLd from "@/components/seo/JsonLd";
 import { getProduct, getRelated, getCategory } from "@/lib/products";
 import { productMetadata, productJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { products } from "@/data/products";
+import { nutrition } from "@/data/nutrition";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -68,19 +70,26 @@ export default async function ProductPage({
               className="object-cover"
             />
           </div>
-          {product.nutritionImage && (
+          {(nutrition[slug] || product.nutritionImage) && (
             <details className="group mt-4 rounded-2xl border border-surface-border bg-surface backdrop-blur-md">
               <summary className="cursor-pointer select-none px-5 py-3.5 text-sm font-medium transition-colors hover:text-berry-bright">
                 Nutrition facts
               </summary>
-              <div className="relative aspect-[2/3] w-full max-w-xs overflow-hidden px-5 pb-5">
-                <Image
-                  src={product.nutritionImage}
-                  alt={`${product.name} — nutrition facts`}
-                  fill
-                  sizes="(max-width: 320px) 100vw, 320px"
-                  className="object-contain"
-                />
+              <div className="px-5 pb-5">
+                {nutrition[slug] ? (
+                  <NutritionTable facts={nutrition[slug]} />
+                ) : (
+                  // фолбэк: этикетку не удалось распознать — показываем фото
+                  <div className="relative aspect-[2/3] w-full max-w-xs overflow-hidden">
+                    <Image
+                      src={product.nutritionImage!}
+                      alt={`${product.name} — nutrition facts`}
+                      fill
+                      sizes="(max-width: 320px) 100vw, 320px"
+                      className="object-contain"
+                    />
+                  </div>
+                )}
               </div>
             </details>
           )}

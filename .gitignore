@@ -29,3 +29,6 @@ next-env.d.ts
 # editor
 .idea
 .vscode
+
+# tesseract OCR runtime artifact
+eng.traineddata

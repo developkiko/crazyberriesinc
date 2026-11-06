@@ -94,15 +94,26 @@ async function main() {
   report.products = { ok, fail };
 
   // ---------- 4. Категории ----------
+  // прямые исходники из старого дампа (не из карточек товаров)
+  const CATEGORY_SOURCES = {
+    "dark-chocolate-covered-fruits":
+      "../old/crazyberriesinc-main/sites/default/files/styles/category/public/71ae5b039f5544fe6538.jpg",
+  };
+
   for (const [slug, productImg] of Object.entries(manifest.categories)) {
+    const dest = join(PUBLIC, "img", "categories", `${slug}.jpg`);
+    ensure(dirname(dest));
+    const direct = CATEGORY_SOURCES[slug];
+    if (direct && existsSync(direct)) {
+      await sharp(direct).resize({ width: 900, withoutEnlargement: true }).jpeg({ quality: 82, mozjpeg: true }).toFile(dest);
+      continue;
+    }
     if (!productImg) continue;
     const src = join(PUBLIC, productImg);
     if (!existsSync(src)) {
       console.warn(`нет исходника для категории ${slug}: ${productImg}`);
       continue;
     }
-    const dest = join(PUBLIC, "img", "categories", `${slug}.jpg`);
-    ensure(dirname(dest));
     await sharp(src).resize({ width: 900, withoutEnlargement: true }).jpeg({ quality: 82, mozjpeg: true }).toFile(dest);
   }
   report.categories = Object.keys(manifest.categories);

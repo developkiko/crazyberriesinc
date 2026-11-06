@@ -19,8 +19,8 @@ export default function ThemeToggle() {
   }, []);
 
   const options = [
-    { key: "light", icon: Sun, label: "Light" },
     { key: "system", icon: Monitor, label: "System" },
+    { key: "light", icon: Sun, label: "Light" },
     { key: "dark", icon: Moon, label: "Dark" },
   ] as const;
 

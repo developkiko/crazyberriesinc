@@ -12,8 +12,10 @@ import { useEffect, useRef } from "react";
  *     с плавным разгоном и плавным торможением (cubic-bezier в globals.css);
  *  3. на transitionend — новый угол, новая длительность, снова движение.
  *
- * Слой больше вьюпорта (inset: -25%), смещение клампится в «окно» ±15%,
- * поэтому края не показываются никогда. prefers-reduced-motion отключает анимацию.
+ * Две «темы» фона лежат внутри ОДНОГО движущегося контейнера и переключаются
+ * кроссфейдом прозрачности (см. .bg-layer в globals.css) — при смене темы
+ * движение не сбрасывается и фон не дёргается: слои всегда в одной точке.
+ * prefers-reduced-motion отключает анимацию.
  */
 export default function AnimatedBackground() {
   const ref = useRef<HTMLDivElement>(null);
@@ -50,15 +52,25 @@ export default function AnimatedBackground() {
       });
     };
 
-    el.addEventListener("transitionend", step, { passive: true });
+    // реагируем только на завершение СВОЕГО transform: opacity-кроссфейд
+    // дочерних слоёв всплывает сюда и не должен запускать новый шаг
+    const onEnd = (e: TransitionEvent) => {
+      if (e.target === el && e.propertyName === "transform") step();
+    };
+    el.addEventListener("transitionend", onEnd, { passive: true });
     // первый запуск после мгновенной паузы
     const t = setTimeout(step, 400);
 
     return () => {
-      el.removeEventListener("transitionend", step);
+      el.removeEventListener("transitionend", onEnd);
       clearTimeout(t);
     };
   }, []);
 
-  return <div ref={ref} aria-hidden className="bg-anim" />;
+  return (
+    <div ref={ref} aria-hidden className="bg-anim">
+      <div className="bg-layer bg-layer-light" />
+      <div className="bg-layer bg-layer-dark" />
+    </div>
+  );
 }
